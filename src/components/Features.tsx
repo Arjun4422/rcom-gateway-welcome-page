@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Workflow, Cpu, Database, Zap, ArrowRight } from "lucide-react";
+import { Workflow, Cpu, Database, Zap, ArrowRight, Radio, Bell, CheckCircle, Truck, Scan, Activity } from "lucide-react";
 import warehouseImage from "@/assets/warehouse-automation.jpg";
 
 const Features = () => {
@@ -22,40 +22,94 @@ const Features = () => {
           </p>
         </div>
 
-        {/* Main Feature Showcase */}
+        {/* Main Feature Showcase with Infographics */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold mb-8">
               See RCOM in Action
             </h3>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold text-sm">1</span>
+            
+            {/* Infographic Flow */}
+            <div className="space-y-8">
+              {/* Step 1 */}
+              <div className="flex items-start space-x-6">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-hover rounded-xl flex items-center justify-center shadow-lg">
+                    <Truck className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="w-0.5 h-12 bg-gradient-to-b from-primary/50 to-primary/20 mt-4"></div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Warehouse pallet passes through cold storage entry</h4>
-                  <p className="text-muted-foreground">Physical event triggers the automation sequence</p>
+                <div className="flex-1 pt-2">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <span className="bg-primary text-white text-sm font-bold px-2 py-1 rounded">1</span>
+                    <h4 className="font-bold text-lg">Physical Event Trigger</h4>
+                  </div>
+                  <p className="text-muted-foreground mb-2">Warehouse pallet passes through cold storage entry</p>
+                  <div className="flex items-center space-x-2 text-sm text-primary">
+                    <Activity className="w-4 h-4" />
+                    <span>Physical movement detected</span>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold text-sm">2</span>
+              {/* Step 2 */}
+              <div className="flex items-start space-x-6">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-tech-cyan to-accent rounded-xl flex items-center justify-center shadow-lg">
+                    <Radio className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="w-0.5 h-12 bg-gradient-to-b from-tech-cyan/50 to-tech-cyan/20 mt-4"></div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2">RCOM detects RFID scan via MQTT</h4>
-                  <p className="text-muted-foreground">Instant recognition and workflow activation</p>
+                <div className="flex-1 pt-2">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <span className="bg-tech-cyan text-white text-sm font-bold px-2 py-1 rounded">2</span>
+                    <h4 className="font-bold text-lg">RCOM Detection</h4>
+                  </div>
+                  <p className="text-muted-foreground mb-2">RCOM detects RFID scan via MQTT protocol</p>
+                  <div className="flex items-center space-x-2 text-sm text-tech-cyan">
+                    <Scan className="w-4 h-4" />
+                    <span>Instant recognition & workflow activation</span>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold text-sm">3</span>
+              {/* Step 3 */}
+              <div className="flex items-start space-x-6">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <CheckCircle className="w-8 h-8 text-white" />
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Inventory updates instantly, alert sent to manager</h4>
-                  <p className="text-muted-foreground">No delays. No manual entry. Just automated precision.</p>
+                <div className="flex-1 pt-2">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <span className="bg-green-500 text-white text-sm font-bold px-2 py-1 rounded">3</span>
+                    <h4 className="font-bold text-lg">Automated Response</h4>
+                  </div>
+                  <p className="text-muted-foreground mb-2">Inventory updates instantly, alert sent to manager</p>
+                  <div className="flex items-center space-x-2 text-sm text-green-600">
+                    <Bell className="w-4 h-4" />
+                    <span>No delays. No manual entry. Just automated precision.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Process Flow Visualization */}
+            <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-tech-cyan/5 rounded-xl border border-primary/10">
+              <div className="flex items-center justify-between text-sm font-medium">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-primary rounded-full"></div>
+                  <span>Trigger</span>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-tech-cyan rounded-full"></div>
+                  <span>Process</span>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span>Action</span>
                 </div>
               </div>
             </div>
@@ -73,6 +127,19 @@ const Features = () => {
               className="rounded-xl shadow-2xl w-full"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-tech-dark/50 to-transparent rounded-xl"></div>
+            
+            {/* Overlay infographic elements */}
+            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+              <div className="flex items-center space-x-2 text-sm font-medium">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>Live Tracking</span>
+              </div>
+            </div>
+            
+            <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+              <div className="text-xs text-muted-foreground mb-1">Real-time Processing</div>
+              <div className="text-lg font-bold text-primary">99.9% Uptime</div>
+            </div>
           </div>
         </div>
 
